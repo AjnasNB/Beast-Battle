@@ -1,16 +1,13 @@
 const express = require('express');
+const axios = require('axios');
 const bodyParser = require('body-parser');
-const { Ollama } = require('ollama');
 
 const app = express();
 app.use(bodyParser.json());
 
-// Initialize Ollama
-const ollama = new Ollama({
-  baseUrl: 'http://localhost:11434', // Default Ollama server endpoint
-});
+const ollamaAPIUrl = "http://localhost:11434/api/v1/chat"; // ollama base adress for chat
 
-// Beast and Arena Definitions
+// Beasts and Arenas
 const beasts = [
   { name: "Inferno Dragon", power: 10, speed: 5, agility: 3, stamina: 2 },
   { name: "Frost Wolf", power: 4, speed: 7, agility: 6, stamina: 3 },
@@ -36,12 +33,13 @@ const generatePrompt = (selectedBeasts, arenaFocus) => {
     .join("\n");
 
   return `Predict the winner of the battle in the ${arenaFocus} arena. 
-Beast stats are as follows:
-${beastStats}
-Use the arena focus to evaluate performance and give a logical prediction.`;
+  Use the following stats for calculation and logic:
+  Beasts:
+  ${beastStats}
+  Arena Focus: ${arenaFocus}`;
 };
 
-// API Endpoint for Predicting Winner
+// API to Predict Winner
 app.post('/predict', async (req, res) => {
   const { selectedBeasts, arena } = req.body;
 
@@ -52,13 +50,13 @@ app.post('/predict', async (req, res) => {
   try {
     const prompt = generatePrompt(selectedBeasts, arena.focus);
 
-    // Call Ollama's chat API
-    const response = await ollama.chat({
-      model: "llama2", // Replace with your installed Ollama model
+    // Call Ollama API
+    const response = await axios.post(ollamaAPIUrl, {
+      model: "llama2", // Replace with your Ollama model
       messages: [{ role: "system", content: prompt }],
     });
 
-    const prediction = response.text.trim();
+    const prediction = response.data.choices[0]?.message?.content;
     res.json({ prediction });
   } catch (error) {
     console.error("Error predicting winner:", error);
@@ -69,5 +67,5 @@ app.post('/predict', async (req, res) => {
 // Start Server
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
