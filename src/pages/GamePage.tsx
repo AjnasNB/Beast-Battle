@@ -65,7 +65,7 @@ const arenas: Arena[] = [
 ];
 
 const GamePage: React.FC = () => {
-  const [timeLeft, setTimeLeft] = useState(25);
+  const [timeLeft, setTimeLeft] = useState(40);
   const [selectedBeasts, setSelectedBeasts] = useState<Beast[]>([]);
   const [selectedArenas, setSelectedArenas] = useState<Arena[]>([]);
   const [revealedArena, setRevealedArena] = useState<Arena | null>(null);
@@ -228,7 +228,7 @@ const GamePage: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="bg-gradient-to-r from-purple-400 to-pink-500 h-6 rounded-full shadow-lg relative"
               >
-                <span className="absolute text-sm text-white left-2">Unknown Beast</span>
+                <span className="absolute text-sm text-white left-2">Beast {index + 1}</span>
               </motion.div>
             ))}
           </div>
