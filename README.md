@@ -1,6 +1,8 @@
 # Beast Battle Arena
 
-Welcome to **Beast Battle Arena**, a blockchain-based skill game where players bet on mythical beasts battling in dynamic arenas. Predict the winner using calculations based on beast stats and arena effects to claim your ETH rewards!
+Welcome to **Beast Battle Arena**, a blockchain-based skill game where players bet on mythical beasts battling in dynamic arenas. Predict the winner using calculations based on beast stats and arena effects to claim your EDU rewards!
+
+![Background Image](assets/background.png)
 
 ## Table of Contents
 - [Welcome to Beast Battle Arena](#welcome-to-beast-battle-arena)
@@ -18,14 +20,15 @@ Welcome to **Beast Battle Arena**, a blockchain-based skill game where players b
 - Unleash the power of mythical beasts!
 - A blockchain-based skill game.
 - Bet on your favorite beasts and watch them fight!
-- Designed for Ethereum blockchain.
+- Designed for EduChain blockchain.
+
 
 ---
 
 ### About the Game
 - Mythical beasts battle in dynamic arenas.
 - Each arena impacts the beast's performance.
-- Bet ETH and predict the winning beast.
+- Bet EDU and predict the winning beast.
 - Real-time scores with a fair smart contract.
 
 ---
@@ -56,7 +59,7 @@ Welcome to **Beast Battle Arena**, a blockchain-based skill game where players b
 ---
 
 ### Blockchain Features
-- Ethereum-based smart contracts.
+- EduChain-based smart contracts.
 - Transparent betting and fair payouts.
 - Winnings securely stored on-chain.
 - Fully decentralized gameplay.
@@ -73,5 +76,5 @@ Welcome to **Beast Battle Arena**, a blockchain-based skill game where players b
 
 ### Join the Arena
 - Connect your wallet and start playing now.
-- Enter the battle, place your bets, and win ETH!
+- Enter the battle, place your bets, and win EDU!
 - The Beast Battle Arena awaits your skill and luck!
