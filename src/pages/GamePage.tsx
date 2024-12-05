@@ -65,7 +65,7 @@ const arenas: Arena[] = [
 ];
 
 const GamePage: React.FC = () => {
-  const [timeLeft, setTimeLeft] = useState(40);
+  const [timeLeft, setTimeLeft] = useState(25);
   const [selectedBeasts, setSelectedBeasts] = useState<Beast[]>([]);
   const [selectedArenas, setSelectedArenas] = useState<Arena[]>([]);
   const [revealedArena, setRevealedArena] = useState<Arena | null>(null);
